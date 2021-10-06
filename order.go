@@ -3,7 +3,6 @@ package goshopify
 import (
 	"encoding/json"
 	"fmt"
-	"net/http"
 	"time"
 
 	"github.com/shopspring/decimal"
@@ -388,7 +387,6 @@ func (s *OrderServiceOp) List(options interface{}) ([]Order, error) {
 func (s *OrderServiceOp) ListWithPagination(options interface{}) ([]Order, *Pagination, error) {
 	path := fmt.Sprintf("%s.json", ordersBasePath)
 	resource := new(OrdersResource)
-	headers := http.Header{}
 
 	headers, err := s.client.createAndDoGetHeaders("GET", path, nil, options, resource)
 	if err != nil {
