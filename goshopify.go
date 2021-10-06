@@ -113,6 +113,7 @@ type Client struct {
 	DiscountCode               DiscountCodeService
 	PriceRule                  PriceRuleService
 	InventoryItem              InventoryItemService
+	InventoryLevel             InventoryLevelService
 	ShippingZone               ShippingZoneService
 	ProductListing             ProductListingService
 }

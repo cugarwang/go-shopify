@@ -13,8 +13,6 @@ const inventoryLevelsBasePath = "inventory_levels"
 type InventoryLevelService interface {
 	List(interface{}) ([]InventoryLevel, error)
 	ListWithPagination(interface{}) ([]InventoryLevel, *Pagination, error)
-	Get(int64, interface{}) (*InventoryLevel, error)
-	Update(InventoryLevel) (*InventoryLevel, error)
 }
 
 type InventoryLevelListOptions struct {
