@@ -290,6 +290,7 @@ func NewClient(app App, shopName, token string, opts ...Option) *Client {
 	c.InventoryItem = &InventoryItemServiceOp{client: c}
 	c.ShippingZone = &ShippingZoneServiceOp{client: c}
 	c.ProductListing = &ProductListingServiceOp{client: c}
+	c.InventoryLevel = &InventoryLevelServiceOp{client: c}
 
 	// apply any options
 	for _, opt := range opts {
