@@ -18,8 +18,8 @@ type InventoryLevelService interface {
 type InventoryLevelListOptions struct {
 	ListOptions
 
-	InventoryItemIDs []int64 `url:"inventory_item_ids,omitempty"`
-	LocationIDs      []int64 `url:"location_ids,omitempty"`
+	InventoryItemIDs []int64 `url:"inventory_item_ids,omitempty,comma"`
+	LocationIDs      []int64 `url:"location_ids,omitempty,comma"`
 }
 
 // InventoryLevelServiceOp is the default implementation of the InventoryLevelService interface
