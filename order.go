@@ -124,7 +124,7 @@ type Order struct {
 	ClientDetails         *ClientDetails   `json:"client_details,omitempty"`
 	Tags                  string           `json:"tags,omitempty"`
 	LocationId            int64            `json:"location_id,omitempty"`
-	PaymentTerms          *PaymentTerms    `json:"payment_schedules,omitempty"`
+	PaymentTerms          *PaymentTerms    `json:"payment_terms,omitempty"`
 	PaymentGatewayNames   []string         `json:"payment_gateway_names,omitempty"`
 	ProcessingMethod      string           `json:"processing_method,omitempty"`
 	Refunds               []Refund         `json:"refunds,omitempty"`
