@@ -124,6 +124,7 @@ type Order struct {
 	ClientDetails         *ClientDetails   `json:"client_details,omitempty"`
 	Tags                  string           `json:"tags,omitempty"`
 	LocationId            int64            `json:"location_id,omitempty"`
+	PaymentTerms          *PaymentTerms    `json:"payment_schedules,omitempty"`
 	PaymentGatewayNames   []string         `json:"payment_gateway_names,omitempty"`
 	ProcessingMethod      string           `json:"processing_method,omitempty"`
 	Refunds               []Refund         `json:"refunds,omitempty"`
@@ -279,6 +280,24 @@ type PaymentDetails struct {
 	CVVResultCode     string `json:"cvv_result_code,omitempty"`
 	CreditCardNumber  string `json:"credit_card_number,omitempty"`
 	CreditCardCompany string `json:"credit_card_company,omitempty"`
+}
+
+type PaymentTerms struct {
+	Amount           *decimal.Decimal   `json:"amount,omitempty"`
+	Currency         string             `json:"currency,omitempty"`
+	DueInDays        int                `json:"due_in_days,omitempty"`
+	PaymentSchedules []*PaymentSchedule `json:"payment_schedules,omitempty"`
+	PaymentTermsName string             `json:"payment_terms_name,omitempty"`
+	PaymentTermsType string             `json:"payment_terms_type,omitempty"`
+}
+
+type PaymentSchedule struct {
+	Amount                *decimal.Decimal `json:"amount,omitempty"`
+	DueAt                 *time.Time       `json:"due_at,omitempty"`
+	Currency              string           `json:"currency,omitempty"`
+	IssuedAt              *time.Time       `json:"issued_at,omitempty"`
+	CompletedAt           *time.Time       `json:"completed_at,omitempty"`
+	ExpectedPaymentMethod string           `json:"expected_payment_method,omitempty"`
 }
 
 type ShippingLines struct {
